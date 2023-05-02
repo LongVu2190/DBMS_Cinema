@@ -1,0 +1,11 @@
+D:\Courses\Year2\HK2\Database management system\Project\Cinema\Cinema\obj\Debug\Cinema.csproj.AssemblyReference.cache
+D:\Courses\Year2\HK2\Database management system\Project\Cinema\Cinema\obj\Debug\Cinema.csproj.SuggestedBindingRedirects.cache
+D:\Courses\Year2\HK2\Database management system\Project\Cinema\Cinema\obj\Debug\Cinema.Cinema.resources
+D:\Courses\Year2\HK2\Database management system\Project\Cinema\Cinema\obj\Debug\Cinema.Properties.Resources.resources
+D:\Courses\Year2\HK2\Database management system\Project\Cinema\Cinema\obj\Debug\Cinema.csproj.GenerateResource.cache
+D:\Courses\Year2\HK2\Database management system\Project\Cinema\Cinema\obj\Debug\Cinema.csproj.CoreCompileInputs.cache
+D:\Courses\Year2\HK2\Database management system\Project\Cinema\Cinema\bin\Debug\Cinema.exe.config
+D:\Courses\Year2\HK2\Database management system\Project\Cinema\Cinema\bin\Debug\Cinema.exe
+D:\Courses\Year2\HK2\Database management system\Project\Cinema\Cinema\bin\Debug\Cinema.pdb
+D:\Courses\Year2\HK2\Database management system\Project\Cinema\Cinema\obj\Debug\Cinema.exe
+D:\Courses\Year2\HK2\Database management system\Project\Cinema\Cinema\obj\Debug\Cinema.pdb
