@@ -13,13 +13,15 @@ namespace Cinema.DB_Layer
         string strConnectionString = "Data Source=localhost;Initial Catalog=Cinema;Integrated Security=False;User ID=sa;Password=123456";
 
         SqlConnection con = null;
+        SqlDataAdapter sql_data = null;
+        DataTable data = null;
 
         public DBMain()
         {
             con = new SqlConnection(strConnectionString);
         }
 
-        public List<int> LoadData(string sql)
+        public List<int> LoadSeats(string sql)
         {
             List<int> list = new List<int>();
 
@@ -35,6 +37,14 @@ namespace Cinema.DB_Layer
                 }
             }
             return list;
+        }
+        public DataTable LoadMovies(string sql)
+        {
+            sql_data = new SqlDataAdapter(sql, con);
+            data = new DataTable();
+            sql_data.Fill(data);
+
+            return data;
         }
 
         public void MyExecuteNonQuery(string sql)

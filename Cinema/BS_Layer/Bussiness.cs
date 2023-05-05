@@ -14,10 +14,16 @@ namespace Cinema.BS_Layer
 
         public Bussiness() { }
 
-        public List<int> LoadData(string Movie_ID)
+        public List<int> LoadSeats(string Movie_ID)
         {
-            string sql = $"select Seat from Reservation A inner join ShowTime B on A.ShowTime_ID = B.ShowTime_ID where Movie_ID = '{Movie_ID}'";
-            return db.LoadData(sql);
+            //string sql = $"select Seat from Reservation A inner join ShowTime B on A.ShowTime_ID = B.ShowTime_ID where Movie_ID = '{Movie_ID}'";
+            string sql = $"select * from Fn_VeNguoiDungDat('{Movie_ID}')";
+            return db.LoadSeats(sql);
+        }
+        public DataTable LoadMovies()
+        {
+            string sql = "select * from ShowTime";
+            return db.LoadMovies(sql);
         }
     }
 }

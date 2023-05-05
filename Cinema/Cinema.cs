@@ -22,7 +22,8 @@ namespace Cinema
         }
         private void Cinema_Load(object sender, EventArgs e)
         {
-            Booked_Seats = bs.LoadData("M1");
+            Booked_Seats = bs.LoadSeats("M1");
+            Movies_Data.DataSource = bs.LoadMovies();
             for (int i = 0; i <= 28; i++)
             {
                 mov.SEATS.Add(0);
@@ -46,7 +47,7 @@ namespace Cinema
                 b.Name = Count.ToString();
                 b.Size = new Size(50, 50);
                 b.Font = new Font("Arial", 12, FontStyle.Bold);
-                b.Location = new Point(60 * (X + 1) + 100, 150 + Y);
+                b.Location = new Point(60 * (X + 1) + 10, Y + 80);
                 switch (mov.SEATS[i])
                 {
                     case -1:
