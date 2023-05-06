@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,29 +14,41 @@ namespace Cinema
 {
     public partial class Cinema : Form
     {
-        Movie mov = new Movie();
-        List<int> Booked_Seats = new List<int>();   
-        Bussiness bs = new Bussiness();
+        public Customer cus;
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
+        BL_Cinema bs = new BL_Cinema();
+        Movie movie;
+        List<int> Booked_Seats = new List<int>();
+        List<int> User_Book = new List<int>();
+
+        string User = "User8";
+        string ShowTime_ID = "";
+        int flag = 0;
+
         public Cinema()
         {
-            InitializeComponent();          
+            InitializeComponent();
+            AllocConsole();
         }
         private void Cinema_Load(object sender, EventArgs e)
         {
-            Booked_Seats = bs.LoadSeats("M1");
-            Movies_Data.DataSource = bs.LoadMovies();
-            for (int i = 0; i <= 28; i++)
-            {
-                mov.SEATS.Add(0);
-            }
-            for (int i = 0; i < Booked_Seats.Count; i++)
-            {
-                mov.SEATS[Booked_Seats[i]] = 1;
-            }
-            CreateSeatsWidget();
+            Movies_Data.DataSource = bs.LoadMovies(flag, "");
         }
         public void CreateSeatsWidget()
         {
+            ClearSeatButtons();
+            movie = new Movie();
+            for (int i = 0; i <= 28; i++)
+            {
+                movie.SEATS.Add(0);
+            }
+            for (int i = 0; i < Booked_Seats.Count; i++)
+            {
+                movie.SEATS[Booked_Seats[i]] = 1;
+            }
             int Count = 1;
             int Buttons = 28;
             int X = 0;
@@ -47,8 +60,8 @@ namespace Cinema
                 b.Name = Count.ToString();
                 b.Size = new Size(50, 50);
                 b.Font = new Font("Arial", 12, FontStyle.Bold);
-                b.Location = new Point(60 * (X + 1) + 10, Y + 80);
-                switch (mov.SEATS[i])
+                b.Location = new Point(60 * (X + 1), Y + 80);
+                switch (movie.SEATS[i])
                 {
                     case -1:
                         b.BackColor = Color.DodgerBlue;
@@ -80,20 +93,67 @@ namespace Cinema
             {
                 MessageBox.Show("Chỗ ngồi " + bt.Name + " đã bị chọn", "Thông báo");
             }
-            else if (bt.BackColor == Color.DodgerBlue)
-            {
-                bt.BackColor = Color.LightSlateGray;
-            }
             else if (bt.BackColor == Color.ForestGreen)
             {
+                User_Book.Remove(Convert.ToInt32(bt.Text));
                 bt.BackColor = Color.LightSlateGray;
             }
             else
             {
+                User_Book.Add(Convert.ToInt32(bt.Text));
                 bt.BackColor = Color.ForestGreen;
             }
+            Console.WriteLine(User_Book.Count());
         }
 
+        private void Movies_Data_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = Movies_Data.CurrentCell.RowIndex;
+            if (r == Movies_Data.RowCount - 1) return;
+            ShowTime_ID = Movies_Data.Rows[r].Cells[0].Value.ToString();
+            Booked_Seats = bs.LoadSeats(ShowTime_ID);
+            CreateSeatsWidget();
+        }
+        public void ClearSeatButtons()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                foreach (Control ctrl in this.Controls)
+                {
+                    if (ctrl is Button)
+                    {
+                        if (!String.Equals(ctrl.Tag, "NoDel"))
+                            this.Controls.Remove(ctrl);
+                    }
+                }
+            }
+        }
+        private void Book_btn_Click(object sender, EventArgs e)
+        {
+            if (User_Book.Count() == 0) return;
+            foreach(var seat in User_Book)
+            {
+
+            }
+            User_Book = new List<int>();
+            ClearSeatButtons();
+        }
+
+        private void FindScreen_btn_Click(object sender, EventArgs e)
+        {
+            flag = 1;
+            Movies_Data.DataSource = bs.LoadMovies(flag, Screen_tb.Text);
+            Movies_Data.Invalidate();
+            ClearSeatButtons();
+        }
+
+        private void All_btn_Click(object sender, EventArgs e)
+        {
+            flag = 0;
+            Movies_Data.DataSource = bs.LoadMovies(flag, "");
+            Movies_Data.Invalidate();
+            ClearSeatButtons();
+        }
     }
 }
 

@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Cinema
 {
-    internal class Movie
+    public class Movie
     {
         public string MOVIE_ID { get; set; } = "";
         public string NAME { get; set; } = "";
-        public string TAG { get; set; } = "";
         public int COST { get; set; } = 0;
         public int START_HOURS { get; set; } = 0;
         public int START_MINUTES { get; set; } = 0;
