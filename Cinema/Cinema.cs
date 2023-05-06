@@ -14,7 +14,7 @@ namespace Cinema
 {
     public partial class Cinema : Form
     {
-        public Customer cus;
+        public User cus;
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();

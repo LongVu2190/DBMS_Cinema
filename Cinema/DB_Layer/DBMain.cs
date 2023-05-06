@@ -47,7 +47,7 @@ namespace Cinema.DB_Layer
             }
             return list;
         }     
-        public void Login(string sql, ref Customer cus, ref bool result)
+        public void CustomerLogin(string sql, ref User cus, ref bool result)
         {
             if (con.State == ConnectionState.Open)
                 con.Close();
@@ -63,6 +63,25 @@ namespace Cinema.DB_Layer
                         cus.Balance = reader.GetInt32(2);
                         cus.Point = reader.GetInt32(3);
                         cus.isVip = reader.GetBoolean(4);
+                        result = true;
+                    }
+                }
+            }
+        }
+        public void AdminLogin(string sql, ref User admin, ref bool result)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            using (SqlCommand cmd = new SqlCommand(sql, con))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        admin.User_ID = reader.GetString(0);
+                        admin.Name = reader.GetString(1);
+                        admin.Role = reader.GetString(2);
                         result = true;
                     }
                 }

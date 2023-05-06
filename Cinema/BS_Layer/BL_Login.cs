@@ -15,10 +15,15 @@ namespace Cinema.BS_Layer
 
         public BL_Login() { }
 
-        public void Login(string User_ID, string Password, ref Customer cus, ref bool result)
+        public void CustomerLogin(string User_ID, string Password, ref User cus, ref bool result)
         {
             string sql = $"select * from Fn_CustomerLogin('{User_ID}', '{Password}')";
-            db.Login(sql, ref cus, ref result);
+            db.CustomerLogin(sql, ref cus, ref result);
+        }
+        public void AdminLogin(string User_ID, string Password, ref User admin, ref bool result)
+        {
+            string sql = $"select * from Fn_AdminLogin('{User_ID}', '{Password}')";
+            db.AdminLogin(sql, ref admin, ref result);
         }
     }
 }

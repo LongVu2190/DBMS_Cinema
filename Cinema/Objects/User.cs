@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Cinema
 {
-    public class Customer
+    public class User
     {
         public string User_ID { get; set; }
         public string Name { get; set; }
+        public string Role { get; set; }
         public int Balance { get; set; }
         public int Point { get; set; }
         public bool isVip { get; set; }
-        public Customer() { }
-        ~Customer() { }
+        public User() { }
+        ~User() { }
     }
 }

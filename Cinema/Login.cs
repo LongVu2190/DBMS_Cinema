@@ -13,7 +13,7 @@ namespace Cinema
 {
     public partial class Login : Form
     {
-        Customer cus = new Customer();
+        User user = new User();
         BL_Login bs = new BL_Login();
         public Login()
         {
@@ -23,12 +23,19 @@ namespace Cinema
         private void Login_btn_Click(object sender, EventArgs e)
         {
             bool result = false;
-            bs.Login(UserID_tb.Text, Password_tb.Text, ref cus, ref result);
+            if (Admin.Checked)
+                bs.AdminLogin(UserID_tb.Text, Password_tb.Text, ref user, ref result);
+            else
+                bs.CustomerLogin(UserID_tb.Text, Password_tb.Text, ref user, ref result);
+
             if (result) 
             {
                 MessageBox.Show("Successfully");
                 this.Hide();
-                new Cinema { cus = this.cus }.ShowDialog();
+                if (Admin.Checked)
+                    new Admin { admin = this.user }.ShowDialog();
+                else
+                    new Cinema { cus = this.user }.ShowDialog();
                 base.Close();
             }
             else
