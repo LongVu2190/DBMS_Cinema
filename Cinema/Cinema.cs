@@ -133,7 +133,7 @@ namespace Cinema
             if (User_Book.Count() == 0) return;
             foreach(var seat in User_Book)
             {
-
+                bs.BookMovie(cus.User_ID, ShowTime_ID, seat);
             }
             User_Book = new List<int>();
             ClearSeatButtons();

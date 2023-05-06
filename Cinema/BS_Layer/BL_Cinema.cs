@@ -12,7 +12,6 @@ namespace Cinema.BS_Layer
     internal class BL_Cinema
     {
         DBMain db = new DBMain();
-
         public BL_Cinema() { }
 
         public List<int> LoadSeats(string ShowTime_ID)
@@ -35,19 +34,19 @@ namespace Cinema.BS_Layer
                     sql = "select * from ShowTime";
                     return db.LoadMovies(sql);
             }
-            
         }
-        public void BookMovie(string User_ID, string ShowTime_ID, string Seat)
+        public void BookMovie(string User_ID, string ShowTime_ID, int Seat)
         {
-            string sql = "";
+            string sql = $"exec Sp_AddReservation '{User_ID}', '{ShowTime_ID}', {Seat}";
             try
             {
                 db.MyExecuteNonQuery(sql);
             }
             catch (Exception ex) 
             {
-                MessageBox.Show("Not enough money in your balance");
+                MessageBox.Show("You don't have enough money!!!");
             }
+            MessageBox.Show("Successfully");
         }
     }
 }
