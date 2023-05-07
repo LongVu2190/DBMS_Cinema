@@ -25,7 +25,7 @@ namespace Cinema
         List<int> User_Book = new List<int>();
 
         string ShowTime_ID = "";
-        int flag = 0;
+        MovieType flag = MovieType.All;
 
         public Cinema()
         {
@@ -91,7 +91,7 @@ namespace Cinema
             Button bt = sender as Button;
             if (bt.BackColor == Color.IndianRed)
             {
-                MessageBox.Show("Chỗ ngồi " + bt.Name + " đã bị chọn", "Thông báo");
+                MessageBox.Show("Seat " + bt.Name + " is chosen", "Notification");
             }
             else if (bt.BackColor == Color.ForestGreen)
             {
@@ -108,7 +108,7 @@ namespace Cinema
         private void Movies_Data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = Movies_Data.CurrentCell.RowIndex;
-            if (r == Movies_Data.RowCount - 1 || flag == 4) return;
+            if (r == Movies_Data.RowCount - 1 || flag == MovieType.UserBooked) return;
             ShowTime_ID = Movies_Data.Rows[r].Cells[0].Value.ToString();
             Booked_Seats = bs.LoadSeats(ShowTime_ID);
             CreateSeatsWidget();
@@ -171,21 +171,21 @@ namespace Cinema
         }
         private void FindScreen_btn_Click(object sender, EventArgs e)
         {
-            flag = 1;
+            flag = MovieType.ByScreen;
             Movies_Data.DataSource = bs.LoadMovies(flag, Screen_tb.Text);
             Movies_Data.Invalidate();
             ClearSeatButtons();
         }
         private void FindCompany_btn_Click(object sender, EventArgs e)
         {
-            flag = 2;
+            flag = MovieType.ByCompany;
             Movies_Data.DataSource = bs.LoadMovies(flag, Company_tb.Text);
             Movies_Data.Invalidate();
             ClearSeatButtons();
         }
         private void FindActor_btn_Click(object sender, EventArgs e)
         {
-            flag = 3;
+            flag = MovieType.ByActor;
             Movies_Data.DataSource = bs.LoadMovies(flag, Actor_tb.Text);
             Movies_Data.Invalidate();
             ClearSeatButtons();
@@ -197,12 +197,22 @@ namespace Cinema
             Movies_Data.Invalidate();
             ClearSeatButtons();
         }
-        private void Check_btn_Click(object sender, EventArgs e)
+        private void Booked_btn_Click(object sender, EventArgs e)
         {
-            flag = 4;
+            flag = MovieType.UserBooked;
             Movies_Data.DataSource = bs.LoadMovies(flag, cus.User_ID);
             Movies_Data.Invalidate();
             ClearSeatButtons();
+        }
+
+        private void Closed_btn_Click(object sender, EventArgs e)
+        {
+            flag = MovieType.Closed;
+        }
+
+        private void Opening_btn_Click(object sender, EventArgs e)
+        {
+            flag = MovieType.Opening;
         }
     }
 }

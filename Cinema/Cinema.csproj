@@ -60,6 +60,7 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovieType.cs" />
     <Compile Include="Objects\User.cs" />
     <Compile Include="DB_Layer\DBMain.cs" />
     <Compile Include="Login.cs">

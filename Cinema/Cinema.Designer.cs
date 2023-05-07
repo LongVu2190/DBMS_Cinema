@@ -51,7 +51,9 @@
             this.Point_lb = new System.Windows.Forms.Label();
             this.VIP_lb = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.Check_btn = new System.Windows.Forms.Button();
+            this.Booked_btn = new System.Windows.Forms.Button();
+            this.Opening_btn = new System.Windows.Forms.Button();
+            this.Closed_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Movies_Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +70,7 @@
             // Book_btn
             // 
             this.Book_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Book_btn.Location = new System.Drawing.Point(1166, 301);
+            this.Book_btn.Location = new System.Drawing.Point(1166, 336);
             this.Book_btn.Name = "Book_btn";
             this.Book_btn.Size = new System.Drawing.Size(90, 29);
             this.Book_btn.TabIndex = 15;
@@ -140,7 +142,7 @@
             // All_btn
             // 
             this.All_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.All_btn.Location = new System.Drawing.Point(967, 301);
+            this.All_btn.Location = new System.Drawing.Point(957, 371);
             this.All_btn.Name = "All_btn";
             this.All_btn.Size = new System.Drawing.Size(84, 29);
             this.All_btn.TabIndex = 22;
@@ -273,7 +275,7 @@
             // 
             this.VIP_lb.AutoSize = true;
             this.VIP_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VIP_lb.Location = new System.Drawing.Point(322, 340);
+            this.VIP_lb.Location = new System.Drawing.Point(319, 340);
             this.VIP_lb.Name = "VIP_lb";
             this.VIP_lb.Size = new System.Drawing.Size(35, 20);
             this.VIP_lb.TabIndex = 35;
@@ -289,24 +291,50 @@
             this.label8.TabIndex = 36;
             this.label8.Text = "------Screen-------";
             // 
-            // Check_btn
+            // Booked_btn
             // 
-            this.Check_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Check_btn.Location = new System.Drawing.Point(1067, 301);
-            this.Check_btn.Name = "Check_btn";
-            this.Check_btn.Size = new System.Drawing.Size(84, 29);
-            this.Check_btn.TabIndex = 37;
-            this.Check_btn.Tag = "NoDel";
-            this.Check_btn.Text = "Check";
-            this.Check_btn.UseVisualStyleBackColor = true;
-            this.Check_btn.Click += new System.EventHandler(this.Check_btn_Click);
+            this.Booked_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Booked_btn.Location = new System.Drawing.Point(1166, 301);
+            this.Booked_btn.Name = "Booked_btn";
+            this.Booked_btn.Size = new System.Drawing.Size(90, 29);
+            this.Booked_btn.TabIndex = 37;
+            this.Booked_btn.Tag = "NoDel";
+            this.Booked_btn.Text = "Booked";
+            this.Booked_btn.UseVisualStyleBackColor = true;
+            this.Booked_btn.Click += new System.EventHandler(this.Booked_btn_Click);
+            // 
+            // Opening_btn
+            // 
+            this.Opening_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Opening_btn.Location = new System.Drawing.Point(957, 336);
+            this.Opening_btn.Name = "Opening_btn";
+            this.Opening_btn.Size = new System.Drawing.Size(84, 29);
+            this.Opening_btn.TabIndex = 38;
+            this.Opening_btn.Tag = "NoDel";
+            this.Opening_btn.Text = "Opening";
+            this.Opening_btn.UseVisualStyleBackColor = true;
+            this.Opening_btn.Click += new System.EventHandler(this.Opening_btn_Click);
+            // 
+            // Closed_btn
+            // 
+            this.Closed_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Closed_btn.Location = new System.Drawing.Point(957, 301);
+            this.Closed_btn.Name = "Closed_btn";
+            this.Closed_btn.Size = new System.Drawing.Size(84, 29);
+            this.Closed_btn.TabIndex = 39;
+            this.Closed_btn.Tag = "NoDel";
+            this.Closed_btn.Text = "Closed";
+            this.Closed_btn.UseVisualStyleBackColor = true;
+            this.Closed_btn.Click += new System.EventHandler(this.Closed_btn_Click);
             // 
             // Cinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 419);
-            this.Controls.Add(this.Check_btn);
+            this.Controls.Add(this.Closed_btn);
+            this.Controls.Add(this.Opening_btn);
+            this.Controls.Add(this.Booked_btn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.VIP_lb);
             this.Controls.Add(this.Point_lb);
@@ -365,7 +393,9 @@
         private System.Windows.Forms.Label Point_lb;
         private System.Windows.Forms.Label VIP_lb;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button Check_btn;
+        private System.Windows.Forms.Button Booked_btn;
+        private System.Windows.Forms.Button Opening_btn;
+        private System.Windows.Forms.Button Closed_btn;
     }
 }
 

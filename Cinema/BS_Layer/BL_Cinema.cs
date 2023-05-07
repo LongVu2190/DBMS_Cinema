@@ -19,24 +19,24 @@ namespace Cinema.BS_Layer
             string sql = $"select * from Fn_BookedSeats('{ShowTime_ID}')";
             return db.LoadSeats(sql);
         }
-        public DataTable LoadMovies(int flag, string ID)
+        public DataTable LoadMovies(MovieType flag, string ID)
         {
             string sql = "";
             switch (flag)
             {
-                case 0:
+                case MovieType.All:
                     sql = "select * from ShowTime";
                     return db.LoadMovies(sql);
-                case 1:
+                case MovieType.ByScreen:
                     sql = $"select * from Fn_ShowTime_by_Screen('{ID}')";
                     return db.LoadMovies(sql);
-                case 2:
+                case MovieType.ByCompany:
                     sql = $"select * from Fn_ShowTime_by_Company('{ID}')";
                     return db.LoadMovies(sql);
-                case 3:
+                case MovieType.ByActor:
                     sql = $"select * from Fn_ShowTime_by_Actor('{ID}')";
                     return db.LoadMovies(sql);
-                case 4:
+                case MovieType.UserBooked:
                     sql = $"select * from Fn_User_Booked('{ID}')";
                     return db.LoadMovies(sql);
                 default:
