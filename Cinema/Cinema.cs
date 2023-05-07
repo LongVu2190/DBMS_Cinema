@@ -24,7 +24,6 @@ namespace Cinema
         List<int> Booked_Seats = new List<int>();
         List<int> User_Book = new List<int>();
 
-        string User = "User8";
         string ShowTime_ID = "";
         int flag = 0;
 
