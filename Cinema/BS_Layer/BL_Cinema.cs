@@ -46,7 +46,7 @@ namespace Cinema.BS_Layer
             {
                 MessageBox.Show("You don't have enough money!!!");
             }
-            MessageBox.Show("Successfully");
+            MessageBox.Show("Success");
         }
     }
 }

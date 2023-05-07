@@ -30,7 +30,7 @@ namespace Cinema
 
             if (result) 
             {
-                MessageBox.Show("Successfully");
+                MessageBox.Show("Login Successfully");
                 this.Hide();
                 if (Admin.Checked)
                     new Admin { admin = this.user }.ShowDialog();
