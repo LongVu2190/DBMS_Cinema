@@ -36,6 +36,7 @@ namespace Cinema
         private void Cinema_Load(object sender, EventArgs e)
         {
             Movies_Data.DataSource = bs.LoadMovies(flag, "");
+            LoadUserInformation();
         }
         public void CreateSeatsWidget()
         {
@@ -60,7 +61,7 @@ namespace Cinema
                 b.Name = Count.ToString();
                 b.Size = new Size(50, 50);
                 b.Font = new Font("Arial", 12, FontStyle.Bold);
-                b.Location = new Point(60 * (X + 1), Y + 80);
+                b.Location = new Point(60 * (X + 1), Y + 50);
                 switch (movie.SEATS[i])
                 {
                     case -1:
@@ -105,7 +106,6 @@ namespace Cinema
             }
             Console.WriteLine(User_Book.Count());
         }
-
         private void Movies_Data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = Movies_Data.CurrentCell.RowIndex;
@@ -128,6 +128,14 @@ namespace Cinema
                 }
             }
         }
+        public void LoadUserInformation()
+        {
+            ID_lb.Text = cus.User_ID.ToString();
+            Name_lb.Text = cus.Name.ToString();
+            Balance_lb.Text = cus.Balance.ToString();
+            Point_lb.Text = cus.Point.ToString();
+            VIP_lb.Text = cus.isVip.ToString();
+        }
         private void Book_btn_Click(object sender, EventArgs e)
         {
             if (User_Book.Count() == 0) return;
@@ -138,7 +146,6 @@ namespace Cinema
             User_Book = new List<int>();
             ClearSeatButtons();
         }
-
         private void FindScreen_btn_Click(object sender, EventArgs e)
         {
             flag = 1;
@@ -146,7 +153,21 @@ namespace Cinema
             Movies_Data.Invalidate();
             ClearSeatButtons();
         }
+        private void FindCompany_btn_Click(object sender, EventArgs e)
+        {
+            flag = 2;
+            Movies_Data.DataSource = bs.LoadMovies(flag, Company_tb.Text);
+            Movies_Data.Invalidate();
+            ClearSeatButtons();
+        }
 
+        private void FindActor_btn_Click(object sender, EventArgs e)
+        {
+            flag = 3;
+            Movies_Data.DataSource = bs.LoadMovies(flag, Actor_tb.Text);
+            Movies_Data.Invalidate();
+            ClearSeatButtons();
+        }
         private void All_btn_Click(object sender, EventArgs e)
         {
             flag = 0;

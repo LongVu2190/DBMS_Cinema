@@ -30,6 +30,12 @@ namespace Cinema.BS_Layer
                 case 1:
                     sql = $"select * from Fn_ShowTime_by_Screen('{ID}')";
                     return db.LoadMovies(sql);
+                case 2:
+                    sql = $"select * from Fn_ShowTime_by_Company('{ID}')";
+                    return db.LoadMovies(sql);
+                case 3:
+                    sql = $"select * from Fn_ShowTime_by_Actor('{ID}')";
+                    return db.LoadMovies(sql);
                 default:
                     sql = "select * from ShowTime";
                     return db.LoadMovies(sql);
