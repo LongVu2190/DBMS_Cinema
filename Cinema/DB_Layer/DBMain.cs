@@ -10,7 +10,7 @@ namespace Cinema.DB_Layer
 {
     internal class DBMain
     {
-        string strConnectionString = "Data Source=localhost;Initial Catalog=Cinema;Integrated Security=False;User ID=sa;Password=123456";
+        string strConnectionString = "Data Source=localhost;Initial Catalog=Cinema;Integrated Security=False;User ID=longvu;Password=123456";
 
         SqlConnection con = null;
         SqlDataAdapter sql_data = null;
@@ -47,6 +47,40 @@ namespace Cinema.DB_Layer
             }
             return list;
         }     
+        public void GetCost(string sql, ref int cost)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            using (SqlCommand cmd = new SqlCommand(sql, con))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        cost = reader.GetInt32(0);
+                    }
+                }
+            }
+        }
+        public void GetUserInformation(string sql, ref User cus)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            using (SqlCommand cmd = new SqlCommand(sql, con))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        cus.Balance = reader.GetInt32(0);
+                        cus.Point = reader.GetInt32(1);
+                        cus.isVip = reader.GetBoolean(2);
+                    }
+                }
+            }
+        }
         public void CustomerLogin(string sql, ref User cus, ref bool result)
         {
             if (con.State == ConnectionState.Open)

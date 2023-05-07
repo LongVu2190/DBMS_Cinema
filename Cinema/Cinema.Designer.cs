@@ -51,6 +51,7 @@
             this.Point_lb = new System.Windows.Forms.Label();
             this.VIP_lb = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.Check_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Movies_Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -288,11 +289,24 @@
             this.label8.TabIndex = 36;
             this.label8.Text = "------Screen-------";
             // 
+            // Check_btn
+            // 
+            this.Check_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Check_btn.Location = new System.Drawing.Point(1067, 301);
+            this.Check_btn.Name = "Check_btn";
+            this.Check_btn.Size = new System.Drawing.Size(84, 29);
+            this.Check_btn.TabIndex = 37;
+            this.Check_btn.Tag = "NoDel";
+            this.Check_btn.Text = "Check";
+            this.Check_btn.UseVisualStyleBackColor = true;
+            this.Check_btn.Click += new System.EventHandler(this.Check_btn_Click);
+            // 
             // Cinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 419);
+            this.Controls.Add(this.Check_btn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.VIP_lb);
             this.Controls.Add(this.Point_lb);
@@ -351,6 +365,7 @@
         private System.Windows.Forms.Label Point_lb;
         private System.Windows.Forms.Label VIP_lb;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button Check_btn;
     }
 }
 

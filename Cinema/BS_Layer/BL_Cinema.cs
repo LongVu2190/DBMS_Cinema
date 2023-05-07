@@ -36,23 +36,28 @@ namespace Cinema.BS_Layer
                 case 3:
                     sql = $"select * from Fn_ShowTime_by_Actor('{ID}')";
                     return db.LoadMovies(sql);
+                case 4:
+                    sql = $"select * from Fn_User_Booked('{ID}')";
+                    return db.LoadMovies(sql);
                 default:
                     sql = "select * from ShowTime";
                     return db.LoadMovies(sql);
             }
         }
+        public void LoadUserInformation(string User_ID, ref User cus)
+        {
+            string sql = $"select Balance, Point, isVip\r\nfrom Customer\r\nwhere Customer.User_ID = '{User_ID}'";
+            db.GetUserInformation(sql, ref cus);
+        }
+        public void GetCost(string ShowTime_ID, ref int cost)
+        {
+            string sql = $"select Total_Cost from ShowTime where ShowTime_ID = '{ShowTime_ID}'";
+            db.GetCost(sql, ref cost);
+        }
         public void BookMovie(string User_ID, string ShowTime_ID, int Seat)
         {
             string sql = $"exec Sp_AddReservation '{User_ID}', '{ShowTime_ID}', {Seat}";
-            try
-            {
-                db.MyExecuteNonQuery(sql);
-            }
-            catch (Exception ex) 
-            {
-                MessageBox.Show("You don't have enough money!!!");
-            }
-            MessageBox.Show("Success");
+            db.MyExecuteNonQuery(sql);
         }
     }
 }
