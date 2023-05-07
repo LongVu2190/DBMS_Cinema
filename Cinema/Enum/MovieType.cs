@@ -7,7 +7,9 @@
         ByCompany,
         ByActor,
         UserBooked,
-        Opening,
-        Closed
+        Coming,
+        Closed,
+        InDay,
+        Available,
     }
 }

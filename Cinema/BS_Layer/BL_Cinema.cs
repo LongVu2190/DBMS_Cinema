@@ -39,6 +39,15 @@ namespace Cinema.BS_Layer
                 case MovieType.UserBooked:
                     sql = $"select * from Fn_User_Booked('{ID}')";
                     return db.LoadMovies(sql);
+                case MovieType.InDay:
+                    sql = "select * from View_InDay";
+                    return db.LoadMovies(sql);
+                case MovieType.Coming:
+                    sql = "select * from View_Coming";
+                    return db.LoadMovies(sql);
+                case MovieType.Available:
+                    sql = "select * from View_AvailableSeats";
+                    return db.LoadMovies(sql);
                 default:
                     sql = "select * from ShowTime";
                     return db.LoadMovies(sql);

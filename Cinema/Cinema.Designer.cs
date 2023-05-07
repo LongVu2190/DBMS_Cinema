@@ -36,7 +36,7 @@
             this.Company_tb = new System.Windows.Forms.TextBox();
             this.FindActor_btn = new System.Windows.Forms.Button();
             this.Actor_tb = new System.Windows.Forms.TextBox();
-            this.All_btn = new System.Windows.Forms.Button();
+            this.InDay_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,8 +52,10 @@
             this.VIP_lb = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Booked_btn = new System.Windows.Forms.Button();
-            this.Opening_btn = new System.Windows.Forms.Button();
-            this.Closed_btn = new System.Windows.Forms.Button();
+            this.Coming_btn = new System.Windows.Forms.Button();
+            this.Available_btn = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Comment_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Movies_Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             // Book_btn
             // 
             this.Book_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Book_btn.Location = new System.Drawing.Point(1166, 336);
+            this.Book_btn.Location = new System.Drawing.Point(274, 412);
             this.Book_btn.Name = "Book_btn";
             this.Book_btn.Size = new System.Drawing.Size(90, 29);
             this.Book_btn.TabIndex = 15;
@@ -139,17 +141,17 @@
             this.Actor_tb.Size = new System.Drawing.Size(141, 29);
             this.Actor_tb.TabIndex = 20;
             // 
-            // All_btn
+            // InDay_btn
             // 
-            this.All_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.All_btn.Location = new System.Drawing.Point(957, 371);
-            this.All_btn.Name = "All_btn";
-            this.All_btn.Size = new System.Drawing.Size(84, 29);
-            this.All_btn.TabIndex = 22;
-            this.All_btn.Tag = "NoDel";
-            this.All_btn.Text = "All";
-            this.All_btn.UseVisualStyleBackColor = true;
-            this.All_btn.Click += new System.EventHandler(this.All_btn_Click);
+            this.InDay_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InDay_btn.Location = new System.Drawing.Point(646, 413);
+            this.InDay_btn.Name = "InDay_btn";
+            this.InDay_btn.Size = new System.Drawing.Size(84, 29);
+            this.InDay_btn.TabIndex = 22;
+            this.InDay_btn.Tag = "NoDel";
+            this.InDay_btn.Text = "In Day";
+            this.InDay_btn.UseVisualStyleBackColor = true;
+            this.InDay_btn.Click += new System.EventHandler(this.InDay_btn_Click);
             // 
             // label1
             // 
@@ -294,7 +296,7 @@
             // Booked_btn
             // 
             this.Booked_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Booked_btn.Location = new System.Drawing.Point(1166, 301);
+            this.Booked_btn.Location = new System.Drawing.Point(25, 412);
             this.Booked_btn.Name = "Booked_btn";
             this.Booked_btn.Size = new System.Drawing.Size(90, 29);
             this.Booked_btn.TabIndex = 37;
@@ -303,37 +305,61 @@
             this.Booked_btn.UseVisualStyleBackColor = true;
             this.Booked_btn.Click += new System.EventHandler(this.Booked_btn_Click);
             // 
-            // Opening_btn
+            // Coming_btn
             // 
-            this.Opening_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Opening_btn.Location = new System.Drawing.Point(957, 336);
-            this.Opening_btn.Name = "Opening_btn";
-            this.Opening_btn.Size = new System.Drawing.Size(84, 29);
-            this.Opening_btn.TabIndex = 38;
-            this.Opening_btn.Tag = "NoDel";
-            this.Opening_btn.Text = "Opening";
-            this.Opening_btn.UseVisualStyleBackColor = true;
-            this.Opening_btn.Click += new System.EventHandler(this.Opening_btn_Click);
+            this.Coming_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Coming_btn.Location = new System.Drawing.Point(854, 412);
+            this.Coming_btn.Name = "Coming_btn";
+            this.Coming_btn.Size = new System.Drawing.Size(84, 29);
+            this.Coming_btn.TabIndex = 38;
+            this.Coming_btn.Tag = "NoDel";
+            this.Coming_btn.Text = "Coming";
+            this.Coming_btn.UseVisualStyleBackColor = true;
+            this.Coming_btn.Click += new System.EventHandler(this.Coming_btn_Click);
             // 
-            // Closed_btn
+            // Available_btn
             // 
-            this.Closed_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Closed_btn.Location = new System.Drawing.Point(957, 301);
-            this.Closed_btn.Name = "Closed_btn";
-            this.Closed_btn.Size = new System.Drawing.Size(84, 29);
-            this.Closed_btn.TabIndex = 39;
-            this.Closed_btn.Tag = "NoDel";
-            this.Closed_btn.Text = "Closed";
-            this.Closed_btn.UseVisualStyleBackColor = true;
-            this.Closed_btn.Click += new System.EventHandler(this.Closed_btn_Click);
+            this.Available_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Available_btn.Location = new System.Drawing.Point(751, 413);
+            this.Available_btn.Name = "Available_btn";
+            this.Available_btn.Size = new System.Drawing.Size(84, 29);
+            this.Available_btn.TabIndex = 41;
+            this.Available_btn.Tag = "NoDel";
+            this.Available_btn.Text = "Available";
+            this.Available_btn.UseVisualStyleBackColor = true;
+            this.Available_btn.Click += new System.EventHandler(this.Available_btn_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(533, 417);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 20);
+            this.label9.TabIndex = 42;
+            this.label9.Text = "Movie in Day";
+            // 
+            // Comment_btn
+            // 
+            this.Comment_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Comment_btn.Location = new System.Drawing.Point(125, 412);
+            this.Comment_btn.Name = "Comment_btn";
+            this.Comment_btn.Size = new System.Drawing.Size(90, 29);
+            this.Comment_btn.TabIndex = 43;
+            this.Comment_btn.Tag = "NoDel";
+            this.Comment_btn.Text = "Comment";
+            this.Comment_btn.UseVisualStyleBackColor = true;
+            this.Comment_btn.Click += new System.EventHandler(this.Comment_btn_Click);
             // 
             // Cinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 419);
-            this.Controls.Add(this.Closed_btn);
-            this.Controls.Add(this.Opening_btn);
+            this.ClientSize = new System.Drawing.Size(1285, 451);
+            this.Controls.Add(this.Comment_btn);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.Available_btn);
+            this.Controls.Add(this.Coming_btn);
             this.Controls.Add(this.Booked_btn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.VIP_lb);
@@ -349,7 +375,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.All_btn);
+            this.Controls.Add(this.InDay_btn);
             this.Controls.Add(this.FindActor_btn);
             this.Controls.Add(this.Actor_tb);
             this.Controls.Add(this.FindCompany_btn);
@@ -378,7 +404,7 @@
         private System.Windows.Forms.TextBox Company_tb;
         private System.Windows.Forms.Button FindActor_btn;
         private System.Windows.Forms.TextBox Actor_tb;
-        private System.Windows.Forms.Button All_btn;
+        private System.Windows.Forms.Button InDay_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -394,8 +420,10 @@
         private System.Windows.Forms.Label VIP_lb;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Booked_btn;
-        private System.Windows.Forms.Button Opening_btn;
-        private System.Windows.Forms.Button Closed_btn;
+        private System.Windows.Forms.Button Coming_btn;
+        private System.Windows.Forms.Button Available_btn;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button Comment_btn;
     }
 }
 

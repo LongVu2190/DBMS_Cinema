@@ -60,7 +60,13 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="MovieType.cs" />
+    <Compile Include="Comment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comment.Designer.cs">
+      <DependentUpon>Comment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enum\MovieType.cs" />
     <Compile Include="Objects\User.cs" />
     <Compile Include="DB_Layer\DBMain.cs" />
     <Compile Include="Login.cs">
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cinema.resx">
       <DependentUpon>Cinema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comment.resx">
+      <DependentUpon>Comment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

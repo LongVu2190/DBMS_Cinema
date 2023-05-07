@@ -25,6 +25,7 @@ namespace Cinema
         List<int> User_Book = new List<int>();
 
         string ShowTime_ID = "";
+        string Reservation_ID = "";
         MovieType flag = MovieType.All;
 
         public Cinema()
@@ -108,7 +109,11 @@ namespace Cinema
         private void Movies_Data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = Movies_Data.CurrentCell.RowIndex;
-            if (r == Movies_Data.RowCount - 1 || flag == MovieType.UserBooked) return;
+            if (r == Movies_Data.RowCount - 1) return;
+            if (flag == MovieType.UserBooked)
+            {
+
+            }
             ShowTime_ID = Movies_Data.Rows[r].Cells[0].Value.ToString();
             Booked_Seats = bs.LoadSeats(ShowTime_ID);
             CreateSeatsWidget();
@@ -190,9 +195,9 @@ namespace Cinema
             Movies_Data.Invalidate();
             ClearSeatButtons();
         }
-        private void All_btn_Click(object sender, EventArgs e)
+        private void InDay_btn_Click(object sender, EventArgs e)
         {
-            flag = 0;
+            flag = MovieType.InDay;
             Movies_Data.DataSource = bs.LoadMovies(flag, "");
             Movies_Data.Invalidate();
             ClearSeatButtons();
@@ -204,15 +209,24 @@ namespace Cinema
             Movies_Data.Invalidate();
             ClearSeatButtons();
         }
-
-        private void Closed_btn_Click(object sender, EventArgs e)
+        private void Coming_btn_Click(object sender, EventArgs e)
         {
-            flag = MovieType.Closed;
+            flag = MovieType.Coming;
+            Movies_Data.DataSource = bs.LoadMovies(flag, "");
+            Movies_Data.Invalidate();
+            ClearSeatButtons();
+        }
+        private void Available_btn_Click(object sender, EventArgs e)
+        {
+            flag = MovieType.Available;
+            Movies_Data.DataSource = bs.LoadMovies(flag, "");
+            Movies_Data.Invalidate();
+            ClearSeatButtons();
         }
 
-        private void Opening_btn_Click(object sender, EventArgs e)
+        private void Comment_btn_Click(object sender, EventArgs e)
         {
-            flag = MovieType.Opening;
+
         }
     }
 }
