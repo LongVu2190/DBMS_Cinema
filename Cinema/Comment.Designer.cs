@@ -28,39 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Screen_tb = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Reservation_ID_tb = new System.Windows.Forms.TextBox();
+            this.Point_tb = new System.Windows.Forms.TextBox();
+            this.Comment_tb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Comment_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Screen_tb
+            // Reservation_ID_tb
             // 
-            this.Screen_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Screen_tb.Location = new System.Drawing.Point(140, 32);
-            this.Screen_tb.Name = "Screen_tb";
-            this.Screen_tb.ReadOnly = true;
-            this.Screen_tb.Size = new System.Drawing.Size(292, 29);
-            this.Screen_tb.TabIndex = 17;
+            this.Reservation_ID_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reservation_ID_tb.Location = new System.Drawing.Point(140, 32);
+            this.Reservation_ID_tb.Name = "Reservation_ID_tb";
+            this.Reservation_ID_tb.ReadOnly = true;
+            this.Reservation_ID_tb.Size = new System.Drawing.Size(292, 29);
+            this.Reservation_ID_tb.TabIndex = 17;
             // 
-            // textBox1
+            // Point_tb
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(140, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 29);
-            this.textBox1.TabIndex = 18;
+            this.Point_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Point_tb.Location = new System.Drawing.Point(140, 76);
+            this.Point_tb.Name = "Point_tb";
+            this.Point_tb.Size = new System.Drawing.Size(292, 29);
+            this.Point_tb.TabIndex = 18;
             // 
-            // textBox2
+            // Comment_tb
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(140, 122);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(292, 29);
-            this.textBox2.TabIndex = 19;
+            this.Comment_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Comment_tb.Location = new System.Drawing.Point(140, 122);
+            this.Comment_tb.Name = "Comment_tb";
+            this.Comment_tb.Size = new System.Drawing.Size(292, 29);
+            this.Comment_tb.TabIndex = 19;
             // 
             // label6
             // 
@@ -112,11 +112,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Screen_tb);
+            this.Controls.Add(this.Comment_tb);
+            this.Controls.Add(this.Point_tb);
+            this.Controls.Add(this.Reservation_ID_tb);
             this.Name = "Comment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comment";
+            this.Load += new System.EventHandler(this.Comment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,9 +126,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Screen_tb;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Reservation_ID_tb;
+        private System.Windows.Forms.TextBox Point_tb;
+        private System.Windows.Forms.TextBox Comment_tb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

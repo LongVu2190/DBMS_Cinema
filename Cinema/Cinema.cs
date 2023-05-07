@@ -112,7 +112,8 @@ namespace Cinema
             if (r == Movies_Data.RowCount - 1) return;
             if (flag == MovieType.UserBooked)
             {
-
+                Reservation_ID = Movies_Data.Rows[r].Cells[0].Value.ToString();
+                return;
             }
             ShowTime_ID = Movies_Data.Rows[r].Cells[0].Value.ToString();
             Booked_Seats = bs.LoadSeats(ShowTime_ID);
@@ -226,7 +227,10 @@ namespace Cinema
 
         private void Comment_btn_Click(object sender, EventArgs e)
         {
-
+            if (Reservation_ID == "") return;
+            Comment form = new Comment(Reservation_ID);
+            form.ShowDialog();
+            Reservation_ID = "";
         }
     }
 }
