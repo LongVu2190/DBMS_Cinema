@@ -26,7 +26,7 @@ namespace Cinema
 
         string ShowTime_ID = "";
         string Reservation_ID = "";
-        MovieType flag = MovieType.All;
+        MovieType flag = MovieType.InDay;
 
         public Cinema()
         {
