@@ -68,5 +68,10 @@ namespace Cinema.BS_Layer
             string sql = $"exec Sp_AddReservation '{User_ID}', '{ShowTime_ID}', {Seat}";
             db.MyExecuteNonQuery(sql);
         }
+        public void AddComment(int Reservation_ID, int Point, string Comment)
+        {
+            string sql = $"exec Sp_AddOrUpdateComment {Reservation_ID}, {Point}, '{Comment}'";
+            db.MyExecuteNonQuery(sql);
+        }
     }
 }

@@ -102,6 +102,7 @@
             this.Comment_btn.Tag = "NoDel";
             this.Comment_btn.Text = "Comment";
             this.Comment_btn.UseVisualStyleBackColor = true;
+            this.Comment_btn.Click += new System.EventHandler(this.Comment_btn_Click);
             // 
             // Comment
             // 

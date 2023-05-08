@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinema.BS_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Cinema
 {
     public partial class Comment : Form
     {
+        BL_Cinema bs = new BL_Cinema();
         string Reservation_ID = "";
         public Comment()
         {
@@ -27,6 +29,19 @@ namespace Cinema
         {           
             Reservation_ID_tb.Text = Reservation_ID;
             Point_tb.Focus();
+        }
+
+        private void Comment_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bs.AddComment(Convert.ToInt32(Reservation_ID), Convert.ToInt32(Point_tb.Text), Comment_tb.Text);
+                MessageBox.Show("Commented");
+            }
+            catch 
+            {
+                MessageBox.Show("Error");
+            }
         }
     }
 }
