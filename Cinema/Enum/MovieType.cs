@@ -10,6 +10,5 @@
         Coming,
         Closed,
         InDay,
-        Available,
     }
 }

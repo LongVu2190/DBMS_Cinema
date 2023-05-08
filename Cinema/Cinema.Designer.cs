@@ -53,8 +53,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Booked_btn = new System.Windows.Forms.Button();
             this.Coming_btn = new System.Windows.Forms.Button();
-            this.Available_btn = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.Comment_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Movies_Data)).BeginInit();
             this.SuspendLayout();
@@ -144,7 +142,7 @@
             // InDay_btn
             // 
             this.InDay_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InDay_btn.Location = new System.Drawing.Point(646, 413);
+            this.InDay_btn.Location = new System.Drawing.Point(751, 412);
             this.InDay_btn.Name = "InDay_btn";
             this.InDay_btn.Size = new System.Drawing.Size(84, 29);
             this.InDay_btn.TabIndex = 22;
@@ -317,28 +315,6 @@
             this.Coming_btn.UseVisualStyleBackColor = true;
             this.Coming_btn.Click += new System.EventHandler(this.Coming_btn_Click);
             // 
-            // Available_btn
-            // 
-            this.Available_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Available_btn.Location = new System.Drawing.Point(751, 413);
-            this.Available_btn.Name = "Available_btn";
-            this.Available_btn.Size = new System.Drawing.Size(84, 29);
-            this.Available_btn.TabIndex = 41;
-            this.Available_btn.Tag = "NoDel";
-            this.Available_btn.Text = "Available";
-            this.Available_btn.UseVisualStyleBackColor = true;
-            this.Available_btn.Click += new System.EventHandler(this.Available_btn_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(533, 417);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 20);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "Movie in Day";
-            // 
             // Comment_btn
             // 
             this.Comment_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -357,8 +333,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 451);
             this.Controls.Add(this.Comment_btn);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.Available_btn);
             this.Controls.Add(this.Coming_btn);
             this.Controls.Add(this.Booked_btn);
             this.Controls.Add(this.label8);
@@ -421,8 +395,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Booked_btn;
         private System.Windows.Forms.Button Coming_btn;
-        private System.Windows.Forms.Button Available_btn;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button Comment_btn;
     }
 }

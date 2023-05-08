@@ -217,13 +217,6 @@ namespace Cinema
             Movies_Data.Invalidate();
             ClearSeatButtons();
         }
-        private void Available_btn_Click(object sender, EventArgs e)
-        {
-            flag = MovieType.Available;
-            Movies_Data.DataSource = bs.LoadMovies(flag, "");
-            Movies_Data.Invalidate();
-            ClearSeatButtons();
-        }
 
         private void Comment_btn_Click(object sender, EventArgs e)
         {

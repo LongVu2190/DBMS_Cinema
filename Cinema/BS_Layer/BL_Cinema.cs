@@ -45,9 +45,6 @@ namespace Cinema.BS_Layer
                 case MovieType.Coming:
                     sql = "select * from View_Coming";
                     return db.LoadMovies(sql);
-                case MovieType.Available:
-                    sql = "select * from View_AvailableSeats";
-                    return db.LoadMovies(sql);
                 default:
                     sql = "select * from ShowTime";
                     return db.LoadMovies(sql);
