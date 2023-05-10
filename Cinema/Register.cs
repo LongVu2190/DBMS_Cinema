@@ -35,6 +35,7 @@ namespace Cinema
             {
                 bs.Register(UserID_tb.Text, Password_tb.Text, Name_tb.Text, Email_tb.Text, Address_tb.Text, Phone_tb.Text);
                 MessageBox.Show("Created Successfully");
+                base.Close();
             }
             catch
             {

@@ -40,6 +40,7 @@ namespace Cinema
         }
         public void CreateSeatsWidget()
         {
+            User_Book = new List<int>();
             ClearSeatButtons();
             movie = new Movie();
             for (int i = 0; i <= 28; i++)

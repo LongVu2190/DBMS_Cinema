@@ -37,6 +37,7 @@ namespace Cinema
             {
                 bs.AddComment(Convert.ToInt32(Reservation_ID), Convert.ToInt32(Point_tb.Text), Comment_tb.Text);
                 MessageBox.Show("Commented");
+                base.Close();
             }
             catch 
             {
