@@ -20,10 +20,10 @@ namespace Cinema.BS_Layer
             string sql = $"select * from Fn_CustomerLogin('{User_ID}', '{Password}')";
             db.CustomerLogin(sql, ref cus, ref result);
         }
-        public void AdminLogin(string User_ID, string Password, ref User admin, ref bool result)
+        public void Register(string User_ID, string Password, string Name, string Email, string Address, string Phone)
         {
-            string sql = $"select * from Fn_AdminLogin('{User_ID}', '{Password}')";
-            db.AdminLogin(sql, ref admin, ref result);
+            string sql = $"exec Sp_AddNewCustomer '{User_ID}', '{Password}', N'{Name}', '{Email}', '{Address}', '{Phone}'";
+            db.MyExecuteNonQuery(sql);
         }
     }
 }

@@ -102,25 +102,6 @@ namespace Cinema.DB_Layer
                 }
             }
         }
-        public void AdminLogin(string sql, ref User admin, ref bool result)
-        {
-            if (con.State == ConnectionState.Open)
-                con.Close();
-            con.Open();
-            using (SqlCommand cmd = new SqlCommand(sql, con))
-            {
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        admin.User_ID = reader.GetString(0);
-                        admin.Name = reader.GetString(1);
-                        admin.Role = reader.GetString(2);
-                        result = true;
-                    }
-                }
-            }
-        }
         public void MyExecuteNonQuery(string sql)
         {
             if (con.State == ConnectionState.Open)

@@ -31,7 +31,7 @@ namespace Cinema
         public Cinema()
         {
             InitializeComponent();
-            AllocConsole();
+            //AllocConsole();
         }
         private void Cinema_Load(object sender, EventArgs e)
         {
@@ -217,7 +217,6 @@ namespace Cinema
             Movies_Data.Invalidate();
             ClearSeatButtons();
         }
-
         private void Comment_btn_Click(object sender, EventArgs e)
         {
             if (Reservation_ID == "") return;

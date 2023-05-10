@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.Reservation_ID_tb = new System.Windows.Forms.TextBox();
-            this.Point_tb = new System.Windows.Forms.TextBox();
             this.Comment_tb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Comment_btn = new System.Windows.Forms.Button();
+            this.Point_tb = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Reservation_ID_tb
@@ -45,14 +45,6 @@
             this.Reservation_ID_tb.ReadOnly = true;
             this.Reservation_ID_tb.Size = new System.Drawing.Size(292, 29);
             this.Reservation_ID_tb.TabIndex = 17;
-            // 
-            // Point_tb
-            // 
-            this.Point_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Point_tb.Location = new System.Drawing.Point(140, 76);
-            this.Point_tb.Name = "Point_tb";
-            this.Point_tb.Size = new System.Drawing.Size(292, 29);
-            this.Point_tb.TabIndex = 18;
             // 
             // Comment_tb
             // 
@@ -104,17 +96,39 @@
             this.Comment_btn.UseVisualStyleBackColor = true;
             this.Comment_btn.Click += new System.EventHandler(this.Comment_btn_Click);
             // 
+            // Point_tb
+            // 
+            this.Point_tb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Point_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Point_tb.FormattingEnabled = true;
+            this.Point_tb.Items.AddRange(new object[] {
+            "10",
+            "9",
+            "8",
+            "7",
+            "6",
+            "5",
+            "4",
+            "3",
+            "2",
+            "1",
+            "0"});
+            this.Point_tb.Location = new System.Drawing.Point(140, 76);
+            this.Point_tb.Name = "Point_tb";
+            this.Point_tb.Size = new System.Drawing.Size(292, 32);
+            this.Point_tb.TabIndex = 45;
+            // 
             // Comment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 217);
+            this.Controls.Add(this.Point_tb);
             this.Controls.Add(this.Comment_btn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Comment_tb);
-            this.Controls.Add(this.Point_tb);
             this.Controls.Add(this.Reservation_ID_tb);
             this.Name = "Comment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -128,11 +142,11 @@
         #endregion
 
         private System.Windows.Forms.TextBox Reservation_ID_tb;
-        private System.Windows.Forms.TextBox Point_tb;
         private System.Windows.Forms.TextBox Comment_tb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Comment_btn;
+        private System.Windows.Forms.ComboBox Point_tb;
     }
 }

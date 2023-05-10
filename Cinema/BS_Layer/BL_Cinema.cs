@@ -31,28 +31,27 @@ namespace Cinema.BS_Layer
                     sql = $"select * from Fn_ShowTime_by_Screen('{ID}')";
                     return db.LoadMovies(sql);
                 case MovieType.ByCompany:
-                    sql = $"select * from Fn_ShowTime_by_Company('{ID}')";
+                    sql = $"select * from Fn_ShowTime_by_Company(N'{ID}')";
                     return db.LoadMovies(sql);
                 case MovieType.ByActor:
-                    sql = $"select * from Fn_ShowTime_by_Actor('{ID}')";
+                    sql = $"select * from Fn_ShowTime_by_Actor(N'{ID}')";
                     return db.LoadMovies(sql);
                 case MovieType.UserBooked:
                     sql = $"select * from Fn_User_Booked('{ID}')";
                     return db.LoadMovies(sql);
                 case MovieType.InDay:
-                    sql = "select * from View_InDay";
+                    sql = "select * from View_ShowingInDay";
                     return db.LoadMovies(sql);
                 case MovieType.Coming:
-                    sql = "select * from View_Coming";
+                    sql = "select * from View_ComingShowing";
                     return db.LoadMovies(sql);
-                default:
-                    sql = "select * from ShowTime";
-                    return db.LoadMovies(sql);
+                default:                   
+                    return null;
             }
         }
         public void LoadUserInformation(string User_ID, ref User cus)
         {
-            string sql = $"select Balance, Point, isVip\r\nfrom Customer\r\nwhere Customer.User_ID = '{User_ID}'";
+            string sql = $"select Balance, Point, isVip from Customer where Customer.User_ID = '{User_ID}'";
             db.GetUserInformation(sql, ref cus);
         }
         public void GetCost(string ShowTime_ID, ref int cost)
@@ -67,7 +66,7 @@ namespace Cinema.BS_Layer
         }
         public void AddComment(int Reservation_ID, int Point, string Comment)
         {
-            string sql = $"exec Sp_AddOrUpdateComment {Reservation_ID}, {Point}, '{Comment}'";
+            string sql = $"exec Sp_AddOrUpdateComment {Reservation_ID}, {Point}, N'{Comment}'";
             db.MyExecuteNonQuery(sql);
         }
     }

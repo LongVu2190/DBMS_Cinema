@@ -30,7 +30,6 @@
         {
             this.Movies_Data = new System.Windows.Forms.DataGridView();
             this.Book_btn = new System.Windows.Forms.Button();
-            this.Screen_tb = new System.Windows.Forms.TextBox();
             this.FindScreen_btn = new System.Windows.Forms.Button();
             this.FindCompany_btn = new System.Windows.Forms.Button();
             this.Company_tb = new System.Windows.Forms.TextBox();
@@ -54,6 +53,7 @@
             this.Booked_btn = new System.Windows.Forms.Button();
             this.Coming_btn = new System.Windows.Forms.Button();
             this.Comment_btn = new System.Windows.Forms.Button();
+            this.Screen_tb = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Movies_Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +63,7 @@
             this.Movies_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Movies_Data.Location = new System.Drawing.Point(529, 14);
             this.Movies_Data.Name = "Movies_Data";
+            this.Movies_Data.ReadOnly = true;
             this.Movies_Data.Size = new System.Drawing.Size(727, 263);
             this.Movies_Data.TabIndex = 14;
             this.Movies_Data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Movies_Data_CellClick);
@@ -78,14 +79,6 @@
             this.Book_btn.Text = "Book";
             this.Book_btn.UseVisualStyleBackColor = true;
             this.Book_btn.Click += new System.EventHandler(this.Book_btn_Click);
-            // 
-            // Screen_tb
-            // 
-            this.Screen_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Screen_tb.Location = new System.Drawing.Point(694, 301);
-            this.Screen_tb.Name = "Screen_tb";
-            this.Screen_tb.Size = new System.Drawing.Size(141, 29);
-            this.Screen_tb.TabIndex = 16;
             // 
             // FindScreen_btn
             // 
@@ -327,11 +320,27 @@
             this.Comment_btn.UseVisualStyleBackColor = true;
             this.Comment_btn.Click += new System.EventHandler(this.Comment_btn_Click);
             // 
+            // Screen_tb
+            // 
+            this.Screen_tb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Screen_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Screen_tb.FormattingEnabled = true;
+            this.Screen_tb.Items.AddRange(new object[] {
+            "8K",
+            "4K",
+            "2K",
+            "FullHD"});
+            this.Screen_tb.Location = new System.Drawing.Point(694, 301);
+            this.Screen_tb.Name = "Screen_tb";
+            this.Screen_tb.Size = new System.Drawing.Size(141, 28);
+            this.Screen_tb.TabIndex = 44;
+            // 
             // Cinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 451);
+            this.Controls.Add(this.Screen_tb);
             this.Controls.Add(this.Comment_btn);
             this.Controls.Add(this.Coming_btn);
             this.Controls.Add(this.Booked_btn);
@@ -355,7 +364,6 @@
             this.Controls.Add(this.FindCompany_btn);
             this.Controls.Add(this.Company_tb);
             this.Controls.Add(this.FindScreen_btn);
-            this.Controls.Add(this.Screen_tb);
             this.Controls.Add(this.Book_btn);
             this.Controls.Add(this.Movies_Data);
             this.Name = "Cinema";
@@ -372,7 +380,6 @@
 
         private System.Windows.Forms.DataGridView Movies_Data;
         private System.Windows.Forms.Button Book_btn;
-        private System.Windows.Forms.TextBox Screen_tb;
         private System.Windows.Forms.Button FindScreen_btn;
         private System.Windows.Forms.Button FindCompany_btn;
         private System.Windows.Forms.TextBox Company_tb;
@@ -396,6 +403,7 @@
         private System.Windows.Forms.Button Booked_btn;
         private System.Windows.Forms.Button Coming_btn;
         private System.Windows.Forms.Button Comment_btn;
+        private System.Windows.Forms.ComboBox Screen_tb;
     }
 }
 
