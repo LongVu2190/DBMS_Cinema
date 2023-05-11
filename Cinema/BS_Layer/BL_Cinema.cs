@@ -48,7 +48,7 @@ namespace Cinema.BS_Layer
                 case MovieType.Coming:
                     sql = "select * from View_ComingShowing";
                     return db.LoadMovies(sql);
-                default:                   
+                default:
                     return null;
             }
         }
@@ -65,7 +65,7 @@ namespace Cinema.BS_Layer
         public void BookMovie(string User_ID, string ShowTime_ID, int Seat)
         {
             string sql = $"exec Sp_AddReservation '{User_ID}', '{ShowTime_ID}', {Seat}";
-            db.MyExecuteNonQuery(sql);
+            db.MyExecuteNonQuery(sql);   
         }
         public void AddComment(int Reservation_ID, int Point, string Comment)
         {

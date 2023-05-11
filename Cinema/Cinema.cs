@@ -1,4 +1,5 @@
 ﻿using Cinema.BS_Layer;
+using Cinema.DB_Layer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -156,7 +157,12 @@ namespace Cinema
             bs.GetCost(ShowTime_ID, ref cost);
             cost = cost * User_Book.Count();
 
-            if (cost > cus.Balance)
+            if (cus.isVip)
+            {
+                cost = cost * 80 / 100;
+            }
+
+            if (cost > cus.Balance && User_Book.Count > 1)
             {
                 MessageBox.Show("You don't have enough money", "Notification");
                 return;
@@ -164,7 +170,7 @@ namespace Cinema
             string result = $"Your total is {cost}";
             if (cus.isVip)
             {
-                result += $", VIP discount 20%, pay {cost * 0.8}";
+                result += $", VIP discount 20%, pay {cost}";
             }
             DialogResult dlr = MessageBox.Show(result, "Notification", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes)
@@ -172,14 +178,12 @@ namespace Cinema
                 foreach (var seat in User_Book)
                 {
                     bs.BookMovie(cus.User_ID, ShowTime_ID, seat);
-                }
-                User_Book = new List<int>();
-                cus.Balance -= cost;
+                }               
                 bs.LoadUserInformation(cus.User_ID, ref cus);
                 LoadUserInformation();
                 MessageBox.Show("Booked Successfully", "Notification");
             }
-            
+            User_Book = new List<int>();
             ClearSeatButtons();
         }
         private void FindScreen_btn_Click(object sender, EventArgs e)
