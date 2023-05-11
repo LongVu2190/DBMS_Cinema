@@ -155,7 +155,7 @@ namespace Cinema
             }
 
             int cost = 0;
-            bs.GetCost(ShowTime_ID, ref cost, User_Book.Count());
+            bs.SumTotalCost(ShowTime_ID, ref cost, User_Book.Count());
 
             if (cost > cus.Balance && User_Book.Count > 1)
             {
@@ -169,9 +169,9 @@ namespace Cinema
             {
                 foreach (var seat in User_Book)
                 {
-                    bs.BookMovie(cus.User_ID, ShowTime_ID, seat);
+                    bs.AddReservation(cus.User_ID, ShowTime_ID, seat);
                 }               
-                bs.LoadUserInformation(cus.User_ID, ref cus);
+                bs.UserInformation(cus.User_ID, ref cus);
                 LoadUserInformation();
                 MessageBox.Show("Booked Successfully", "Notification");
             }

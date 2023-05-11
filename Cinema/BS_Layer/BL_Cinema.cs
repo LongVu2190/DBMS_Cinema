@@ -49,22 +49,22 @@ namespace Cinema.BS_Layer
                     return null;
             }
         }
-        public void LoadUserInformation(string User_ID, ref User cus)
+        public void UserInformation(string User_ID, ref User cus)
         {
             string sql = $"select * from Fn_UserInformation('{User_ID}')";
-            db.GetUserInformation(sql, ref cus);
+            db.UserInformation(sql, ref cus);
         }
-        public void GetCost(string ShowTime_ID, ref int cost, int Count)
+        public void SumTotalCost(string ShowTime_ID, ref int cost, int Count)
         {
             string sql = $"select * from Fn_SumTotalCost'{ShowTime_ID}', '{Count}'";
-            db.GetCost(sql, ref cost);
+            db.SumTotalCost(sql, ref cost);
         }
-        public void BookMovie(string User_ID, string ShowTime_ID, int Seat)
+        public void AddReservation(string User_ID, string ShowTime_ID, int Seat)
         {
             string sql = $"exec Sp_AddReservation '{User_ID}', '{ShowTime_ID}', {Seat}";
             db.MyExecuteNonQuery(sql);   
         }
-        public void AddComment(int Reservation_ID, int Point, string Comment)
+        public void AddOrUpdateComment(int Reservation_ID, int Point, string Comment)
         {
             string sql = $"exec Sp_AddOrUpdateComment {Reservation_ID}, {Point}, N'{Comment}'";
             db.MyExecuteNonQuery(sql);

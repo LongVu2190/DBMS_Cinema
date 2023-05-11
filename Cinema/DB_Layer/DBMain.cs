@@ -48,7 +48,7 @@ namespace Cinema.DB_Layer
             }
             return list;
         }     
-        public void GetCost(string sql, ref int cost)
+        public void SumTotalCost(string sql, ref int cost)
         {
             if (con.State == ConnectionState.Open)
                 con.Close();
@@ -64,7 +64,7 @@ namespace Cinema.DB_Layer
                 }
             }
         }
-        public void GetUserInformation(string sql, ref User cus)
+        public void UserInformation(string sql, ref User cus)
         {
             if (con.State == ConnectionState.Open)
                 con.Close();
