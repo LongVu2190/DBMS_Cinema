@@ -28,16 +28,19 @@ namespace Cinema.BS_Layer
                     sql = "select * from ShowTime";
                     return db.LoadMovies(sql);
                 case MovieType.ByScreen:
-                    sql = $"select * from Fn_ShowTime_by_Screen('{ID}')";
+                    sql = $"select * from Fn_ShowTimeByScreen('{ID}')";
                     return db.LoadMovies(sql);
                 case MovieType.ByCompany:
-                    sql = $"select * from Fn_ShowTime_by_Company(N'{ID}')";
+                    sql = $"select * from Fn_ShowTimeByCompany(N'{ID}')";
                     return db.LoadMovies(sql);
                 case MovieType.ByActor:
-                    sql = $"select * from Fn_ShowTime_by_Actor(N'{ID}')";
+                    sql = $"select * from Fn_ShowTimeByActor(N'{ID}')";
                     return db.LoadMovies(sql);
                 case MovieType.UserBooked:
-                    sql = $"select * from Fn_User_Booked('{ID}')";
+                    sql = $"select * from Fn_UserBooked('{ID}')";
+                    return db.LoadMovies(sql);
+                case MovieType.UserCommented:
+                    sql = $"select * from Fn_UserCommented('{ID}')";
                     return db.LoadMovies(sql);
                 case MovieType.InDay:
                     sql = "select * from View_ShowingInDay";

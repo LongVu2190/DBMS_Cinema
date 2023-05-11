@@ -41,6 +41,7 @@ namespace Cinema
         public void CreateSeatsWidget()
         {
             User_Book = new List<int>();
+            Comment_btn.Enabled = false;
             ClearSeatButtons();
             movie = new Movie();
             for (int i = 0; i <= 28; i++)
@@ -114,6 +115,7 @@ namespace Cinema
             if (flag == MovieType.UserBooked)
             {
                 Reservation_ID = Movies_Data.Rows[r].Cells[0].Value.ToString();
+                Comment_btn.Enabled = true;
                 return;
             }
             ShowTime_ID = Movies_Data.Rows[r].Cells[0].Value.ToString();
@@ -144,7 +146,11 @@ namespace Cinema
         }
         private void Book_btn_Click(object sender, EventArgs e)
         {
-            if (User_Book.Count() == 0) return;
+            if (User_Book.Count() == 0)
+            {
+                MessageBox.Show("Please choose a seat", "Notification");
+                return;
+            }
 
             int cost = 0;
             bs.GetCost(ShowTime_ID, ref cost);
@@ -152,7 +158,7 @@ namespace Cinema
 
             if (cost > cus.Balance)
             {
-                MessageBox.Show("You don't have enough money");
+                MessageBox.Show("You don't have enough money", "Notification");
                 return;
             }
             string result = $"Your total is {cost}";
@@ -171,7 +177,7 @@ namespace Cinema
                 cus.Balance -= cost;
                 bs.LoadUserInformation(cus.User_ID, ref cus);
                 LoadUserInformation();
-                MessageBox.Show("Booked Successfully");
+                MessageBox.Show("Booked Successfully", "Notification");
             }
             
             ClearSeatButtons();
@@ -224,6 +230,14 @@ namespace Cinema
             Comment form = new Comment(Reservation_ID);
             form.ShowDialog();
             Reservation_ID = "";
+            Comment_btn.Enabled = false;
+        }
+        private void Commented_btn_Click(object sender, EventArgs e)
+        {
+            flag = MovieType.UserCommented;
+            Movies_Data.DataSource = bs.LoadMovies(flag, cus.User_ID);
+            Movies_Data.Invalidate();
+            ClearSeatButtons();
         }
     }
 }
