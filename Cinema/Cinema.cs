@@ -144,6 +144,7 @@ namespace Cinema
             Balance_lb.Text = cus.Balance.ToString();
             Point_lb.Text = cus.Point.ToString();
             VIP_lb.Text = cus.isVip.ToString();
+            Expense_lb.Text = cus.Expense.ToString();
         }
         private void Book_btn_Click(object sender, EventArgs e)
         {
@@ -154,13 +155,7 @@ namespace Cinema
             }
 
             int cost = 0;
-            bs.GetCost(ShowTime_ID, ref cost);
-            cost = cost * User_Book.Count();
-
-            if (cus.isVip)
-            {
-                cost = cost * 80 / 100;
-            }
+            bs.GetCost(ShowTime_ID, ref cost, User_Book.Count());
 
             if (cost > cus.Balance && User_Book.Count > 1)
             {
@@ -168,10 +163,7 @@ namespace Cinema
                 return;
             }
             string result = $"Your total is {cost}";
-            if (cus.isVip)
-            {
-                result += $", VIP discount 20%, pay {cost}";
-            }
+
             DialogResult dlr = MessageBox.Show(result, "Notification", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes)
             {

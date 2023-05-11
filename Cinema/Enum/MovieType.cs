@@ -2,7 +2,6 @@
 {
     enum MovieType
     {
-        All,
         ByScreen,
         ByCompany,
         ByActor,

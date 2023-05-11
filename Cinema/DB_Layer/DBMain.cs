@@ -78,6 +78,7 @@ namespace Cinema.DB_Layer
                         cus.Balance = reader.GetInt32(0);
                         cus.Point = reader.GetInt32(1);
                         cus.isVip = reader.GetBoolean(2);
+                        cus.Expense = reader.GetInt32(3);
                     }
                 }
             }

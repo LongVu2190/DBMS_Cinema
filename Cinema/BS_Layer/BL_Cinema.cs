@@ -24,9 +24,6 @@ namespace Cinema.BS_Layer
             string sql = "";
             switch (flag)
             {
-                case MovieType.All:
-                    sql = "select * from ShowTime";
-                    return db.LoadMovies(sql);
                 case MovieType.ByScreen:
                     sql = $"select * from Fn_ShowTimeByScreen('{ID}')";
                     return db.LoadMovies(sql);
@@ -40,7 +37,7 @@ namespace Cinema.BS_Layer
                     sql = $"select * from Fn_UserBooked('{ID}')";
                     return db.LoadMovies(sql);
                 case MovieType.UserCommented:
-                    sql = $"select * from Fn_UserCommented('{ID}')";
+                    sql = $"select * from Fn_UserRating('{ID}')";
                     return db.LoadMovies(sql);
                 case MovieType.InDay:
                     sql = "select * from View_ShowingInDay";
@@ -54,12 +51,12 @@ namespace Cinema.BS_Layer
         }
         public void LoadUserInformation(string User_ID, ref User cus)
         {
-            string sql = $"select Balance, Point, isVip from Customer where Customer.User_ID = '{User_ID}'";
+            string sql = $"select * from Fn_UserInformation('{User_ID}')";
             db.GetUserInformation(sql, ref cus);
         }
-        public void GetCost(string ShowTime_ID, ref int cost)
+        public void GetCost(string ShowTime_ID, ref int cost, int Count)
         {
-            string sql = $"select Total_Cost from ShowTime where ShowTime_ID = '{ShowTime_ID}'";
+            string sql = $"select * from Fn_SumTotalCost'{ShowTime_ID}', '{Count}'";
             db.GetCost(sql, ref cost);
         }
         public void BookMovie(string User_ID, string ShowTime_ID, int Seat)
