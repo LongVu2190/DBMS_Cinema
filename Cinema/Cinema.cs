@@ -168,18 +168,18 @@ namespace Cinema
             }
 
             int cost = 0;
-            bs.SumTotalCost(ShowTime_ID, ref cost, User_Book.Count());
+            bs.SumTotalCost(ShowTime_ID, ref cost, cus.User_ID, User_Book.Count());
 
-            if (cost > cus.Balance && User_Book.Count > 1)
-            {
-                MessageBox.Show("You don't have enough money", "Notification");
-                return;
-            }
             string result = $"Your total is {cost}";
 
             DialogResult dlr = MessageBox.Show(result, "Notification", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes)
             {
+                if (cost > cus.Balance && User_Book.Count > 1)
+                {
+                    MessageBox.Show("You don't have enough money", "Notification");
+                    return;
+                }
                 foreach (var seat in User_Book)
                 {
                     bs.AddReservation(cus.User_ID, ShowTime_ID, seat);

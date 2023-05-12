@@ -60,9 +60,9 @@ namespace Cinema.BS_Layer
             string sql = $"select * from Fn_UserInformation('{User_ID}')";
             db.UserInformation(sql, ref cus);
         }
-        public void SumTotalCost(string ShowTime_ID, ref int cost, int Count)
+        public void SumTotalCost(string ShowTime_ID, ref int cost, string User_ID, int Count)
         {
-            string sql = $"select * from Fn_SumTotalCost'{ShowTime_ID}', '{Count}'";
+            string sql = $"select * from Fn_SumTotalCost('{ShowTime_ID}', '{User_ID}', '{Count}')";
             db.SumTotalCost(sql, ref cost);
         }
         public void AddReservation(string User_ID, string ShowTime_ID, int Seat)

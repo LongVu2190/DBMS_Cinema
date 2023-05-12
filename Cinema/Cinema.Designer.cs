@@ -225,11 +225,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(261, 381);
+            this.label7.Location = new System.Drawing.Point(261, 383);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 20);
+            this.label7.Size = new System.Drawing.Size(90, 20);
             this.label7.TabIndex = 30;
-            this.label7.Text = "VIP:";
+            this.label7.Text = "VIP (-20%):";
             // 
             // ID_lb
             // 
@@ -275,7 +275,7 @@
             // 
             this.VIP_lb.AutoSize = true;
             this.VIP_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VIP_lb.Location = new System.Drawing.Point(313, 381);
+            this.VIP_lb.Location = new System.Drawing.Point(351, 384);
             this.VIP_lb.Name = "VIP_lb";
             this.VIP_lb.Size = new System.Drawing.Size(35, 20);
             this.VIP_lb.TabIndex = 35;
@@ -347,7 +347,7 @@
             // 
             this.Expense_lb.AutoSize = true;
             this.Expense_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Expense_lb.Location = new System.Drawing.Point(342, 410);
+            this.Expense_lb.Location = new System.Drawing.Point(342, 412);
             this.Expense_lb.Name = "Expense_lb";
             this.Expense_lb.Size = new System.Drawing.Size(71, 20);
             this.Expense_lb.TabIndex = 46;
@@ -357,7 +357,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(261, 410);
+            this.label10.Location = new System.Drawing.Point(261, 412);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 20);
             this.label10.TabIndex = 45;
