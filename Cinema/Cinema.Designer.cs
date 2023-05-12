@@ -275,7 +275,7 @@
             // 
             this.VIP_lb.AutoSize = true;
             this.VIP_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VIP_lb.Location = new System.Drawing.Point(351, 384);
+            this.VIP_lb.Location = new System.Drawing.Point(351, 383);
             this.VIP_lb.Name = "VIP_lb";
             this.VIP_lb.Size = new System.Drawing.Size(35, 20);
             this.VIP_lb.TabIndex = 35;
