@@ -10,5 +10,7 @@
         Coming,
         Closed,
         InDay,
+        AllComments,
+        MovieRating,
     }
 }

@@ -112,15 +112,28 @@ namespace Cinema
         private void Movies_Data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = Movies_Data.CurrentCell.RowIndex;
-            if (r == Movies_Data.RowCount - 1) return;
-            if (flag == MovieType.UserBooked)
+            if (r == Movies_Data.RowCount - 1 || flag == MovieType.AllComments)
             {
+                ShowTime_ID = "";
+                ShowTime_ID_tb.Text = "";
+                Reservation_ID = "";
+                Reservation_ID_tb.Text = "";
+                return;
+            }
+            if (flag == MovieType.UserBooked || flag == MovieType.UserCommented)
+            {
+                ShowTime_ID = "";
+                ShowTime_ID_tb.Text = "";
                 Reservation_ID = Movies_Data.Rows[r].Cells[0].Value.ToString();
                 Comment_btn.Enabled = true;
+                Reservation_ID_tb.Text = Reservation_ID;
                 return;
             }
             ShowTime_ID = Movies_Data.Rows[r].Cells[0].Value.ToString();
             Booked_Seats = bs.LoadSeats(ShowTime_ID);
+            ShowTime_ID_tb.Text = ShowTime_ID;
+            Reservation_ID = "";
+            Reservation_ID_tb.Text = "";
             CreateSeatsWidget();
         }
         public void ClearSeatButtons()
@@ -232,6 +245,25 @@ namespace Cinema
         {
             flag = MovieType.UserCommented;
             Movies_Data.DataSource = bs.LoadMovies(flag, cus.User_ID);
+            Movies_Data.Invalidate();
+            ClearSeatButtons();
+        }
+        private void Rating_btn_Click(object sender, EventArgs e)
+        {
+            if (ShowTime_ID == "")
+            {
+                MessageBox.Show("Please choose a ShowTime", "Notification");
+                return;
+            }
+            flag = MovieType.MovieRating;
+            Movies_Data.DataSource = bs.LoadMovies(flag, ShowTime_ID);
+            Movies_Data.Invalidate();
+            ClearSeatButtons();
+        }
+        private void AllComment_btn_Click(object sender, EventArgs e)
+        {
+            flag = MovieType.AllComments;
+            Movies_Data.DataSource = bs.LoadMovies(flag, "");
             Movies_Data.Invalidate();
             ClearSeatButtons();
         }
