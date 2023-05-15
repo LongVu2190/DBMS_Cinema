@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Cinema
 {
@@ -48,6 +49,11 @@ namespace Cinema
             {
                 Login_btn_Click(sender, e);
             }
+        }
+
+        private void password_cb_Click(object sender, EventArgs e)
+        {
+            this.Password_tb.UseSystemPasswordChar = !password_cb.Checked;
         }
     }
 }
