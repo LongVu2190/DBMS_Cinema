@@ -11,14 +11,26 @@ namespace Cinema.DB_Layer
 {
     internal class DBMain
     {
-        string strConnectionString = "Data Source=localhost;Initial Catalog=Cinema;Integrated Security=False;User ID=sa;Password=123456";
-
+        string strConnectionString;
         SqlConnection con = null;
         SqlDataAdapter sql_data = null;
         DataTable data = null;
 
-        public DBMain()
+        public DBMain(int type)
         {
+            if (type == 0)
+            {
+                strConnectionString = "Data Source=localhost;Initial Catalog=Cinema;Integrated Security=False;User ID=login123;Password=login";
+            }
+            else
+            {
+                strConnectionString = "Data Source=localhost;Initial Catalog=Cinema;Integrated Security=False;User ID=customer123;Password=customer";
+            }          
+            con = new SqlConnection(strConnectionString);
+        }
+        public DBMain(string customer)
+        {
+            
             con = new SqlConnection(strConnectionString);
         }
         public DataTable LoadMovies(string sql)

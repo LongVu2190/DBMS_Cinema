@@ -11,7 +11,7 @@ namespace Cinema.BS_Layer
 {
     internal class BL_Login
     {
-        DBMain db = new DBMain();
+        DBMain db = new DBMain(0);
 
         public BL_Login() { }
 

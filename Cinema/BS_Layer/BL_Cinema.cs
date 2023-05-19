@@ -11,7 +11,7 @@ namespace Cinema.BS_Layer
 {
     internal class BL_Cinema
     {
-        DBMain db = new DBMain();
+        DBMain db = new DBMain(1);
         public BL_Cinema() { }
 
         public List<int> LoadSeats(string ShowTime_ID)
