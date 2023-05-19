@@ -236,12 +236,15 @@ namespace Cinema
                 case "Coming_btn":
                     flag = MovieType.Coming;
                     break;
-                case "Commented_btn":
+                case "Booked_btn":
                     flag = MovieType.UserBooked;
+                    break;
+                case "Commented_btn":
+                    flag = MovieType.AllComments;
                     type = cus.User_ID;
                     break;
                 case "UserCommented":
-                    flag = MovieType.UserBooked;
+                    flag = MovieType.UserCommented;
                     type = cus.User_ID;
                     break;
                 case "AllComment_btn":
