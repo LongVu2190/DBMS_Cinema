@@ -25,12 +25,7 @@ namespace Cinema.DB_Layer
             else
             {
                 strConnectionString = "Data Source=localhost;Initial Catalog=Cinema;Integrated Security=False;User ID=sa;Password=123456";
-            }          
-            con = new SqlConnection(strConnectionString);
-        }
-        public DBMain(string customer)
-        {
-            
+            }
             con = new SqlConnection(strConnectionString);
         }
         public DataTable LoadMovies(string sql)
