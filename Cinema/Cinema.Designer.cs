@@ -71,14 +71,14 @@
             this.Movies_Data.Location = new System.Drawing.Point(529, 14);
             this.Movies_Data.Name = "Movies_Data";
             this.Movies_Data.ReadOnly = true;
-            this.Movies_Data.Size = new System.Drawing.Size(727, 263);
+            this.Movies_Data.Size = new System.Drawing.Size(727, 317);
             this.Movies_Data.TabIndex = 14;
             this.Movies_Data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Movies_Data_CellClick);
             // 
             // Book_btn
             // 
             this.Book_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Book_btn.Location = new System.Drawing.Point(412, 302);
+            this.Book_btn.Location = new System.Drawing.Point(412, 303);
             this.Book_btn.Name = "Book_btn";
             this.Book_btn.Size = new System.Drawing.Size(90, 29);
             this.Book_btn.TabIndex = 15;
@@ -90,7 +90,7 @@
             // FindScreen_btn
             // 
             this.FindScreen_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FindScreen_btn.Location = new System.Drawing.Point(854, 301);
+            this.FindScreen_btn.Location = new System.Drawing.Point(849, 362);
             this.FindScreen_btn.Name = "FindScreen_btn";
             this.FindScreen_btn.Size = new System.Drawing.Size(84, 29);
             this.FindScreen_btn.TabIndex = 17;
@@ -102,7 +102,7 @@
             // FindCompany_btn
             // 
             this.FindCompany_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FindCompany_btn.Location = new System.Drawing.Point(854, 336);
+            this.FindCompany_btn.Location = new System.Drawing.Point(849, 397);
             this.FindCompany_btn.Name = "FindCompany_btn";
             this.FindCompany_btn.Size = new System.Drawing.Size(84, 29);
             this.FindCompany_btn.TabIndex = 19;
@@ -114,7 +114,7 @@
             // Company_tb
             // 
             this.Company_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Company_tb.Location = new System.Drawing.Point(694, 336);
+            this.Company_tb.Location = new System.Drawing.Point(689, 397);
             this.Company_tb.Name = "Company_tb";
             this.Company_tb.Size = new System.Drawing.Size(141, 29);
             this.Company_tb.TabIndex = 18;
@@ -122,7 +122,7 @@
             // FindActor_btn
             // 
             this.FindActor_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FindActor_btn.Location = new System.Drawing.Point(854, 371);
+            this.FindActor_btn.Location = new System.Drawing.Point(849, 432);
             this.FindActor_btn.Name = "FindActor_btn";
             this.FindActor_btn.Size = new System.Drawing.Size(84, 29);
             this.FindActor_btn.TabIndex = 21;
@@ -134,7 +134,7 @@
             // Actor_tb
             // 
             this.Actor_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Actor_tb.Location = new System.Drawing.Point(694, 371);
+            this.Actor_tb.Location = new System.Drawing.Point(689, 432);
             this.Actor_tb.Name = "Actor_tb";
             this.Actor_tb.Size = new System.Drawing.Size(141, 29);
             this.Actor_tb.TabIndex = 20;
@@ -142,7 +142,7 @@
             // InDay_btn
             // 
             this.InDay_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InDay_btn.Location = new System.Drawing.Point(751, 412);
+            this.InDay_btn.Location = new System.Drawing.Point(1083, 361);
             this.InDay_btn.Name = "InDay_btn";
             this.InDay_btn.Size = new System.Drawing.Size(84, 29);
             this.InDay_btn.TabIndex = 22;
@@ -155,7 +155,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(533, 306);
+            this.label1.Location = new System.Drawing.Point(528, 367);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 20);
             this.label1.TabIndex = 23;
@@ -165,7 +165,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(533, 342);
+            this.label2.Location = new System.Drawing.Point(528, 403);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 20);
             this.label2.TabIndex = 24;
@@ -175,7 +175,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(533, 378);
+            this.label3.Location = new System.Drawing.Point(528, 439);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 20);
             this.label3.TabIndex = 25;
@@ -184,8 +184,9 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(15, 354);
+            this.label12.Location = new System.Drawing.Point(31, 354);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(30, 20);
             this.label12.TabIndex = 26;
@@ -194,8 +195,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 383);
+            this.label4.Location = new System.Drawing.Point(31, 383);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 27;
@@ -204,8 +206,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 412);
+            this.label5.Location = new System.Drawing.Point(31, 412);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 20);
             this.label5.TabIndex = 28;
@@ -214,8 +217,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(261, 354);
+            this.label6.Location = new System.Drawing.Point(277, 354);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 20);
             this.label6.TabIndex = 29;
@@ -224,8 +228,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(261, 383);
+            this.label7.Location = new System.Drawing.Point(277, 383);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 20);
             this.label7.TabIndex = 30;
@@ -234,8 +239,9 @@
             // ID_lb
             // 
             this.ID_lb.AutoSize = true;
+            this.ID_lb.BackColor = System.Drawing.Color.Transparent;
             this.ID_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID_lb.Location = new System.Drawing.Point(51, 354);
+            this.ID_lb.Location = new System.Drawing.Point(67, 354);
             this.ID_lb.Name = "ID_lb";
             this.ID_lb.Size = new System.Drawing.Size(26, 20);
             this.ID_lb.TabIndex = 31;
@@ -244,8 +250,9 @@
             // Name_lb
             // 
             this.Name_lb.AutoSize = true;
+            this.Name_lb.BackColor = System.Drawing.Color.Transparent;
             this.Name_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name_lb.Location = new System.Drawing.Point(76, 383);
+            this.Name_lb.Location = new System.Drawing.Point(92, 383);
             this.Name_lb.Name = "Name_lb";
             this.Name_lb.Size = new System.Drawing.Size(51, 20);
             this.Name_lb.TabIndex = 32;
@@ -254,8 +261,9 @@
             // Balance_lb
             // 
             this.Balance_lb.AutoSize = true;
+            this.Balance_lb.BackColor = System.Drawing.Color.Transparent;
             this.Balance_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Balance_lb.Location = new System.Drawing.Point(92, 412);
+            this.Balance_lb.Location = new System.Drawing.Point(108, 412);
             this.Balance_lb.Name = "Balance_lb";
             this.Balance_lb.Size = new System.Drawing.Size(67, 20);
             this.Balance_lb.TabIndex = 33;
@@ -264,8 +272,9 @@
             // Point_lb
             // 
             this.Point_lb.AutoSize = true;
+            this.Point_lb.BackColor = System.Drawing.Color.Transparent;
             this.Point_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Point_lb.Location = new System.Drawing.Point(313, 354);
+            this.Point_lb.Location = new System.Drawing.Point(329, 354);
             this.Point_lb.Name = "Point_lb";
             this.Point_lb.Size = new System.Drawing.Size(45, 20);
             this.Point_lb.TabIndex = 34;
@@ -274,8 +283,9 @@
             // VIP_lb
             // 
             this.VIP_lb.AutoSize = true;
+            this.VIP_lb.BackColor = System.Drawing.Color.Transparent;
             this.VIP_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VIP_lb.Location = new System.Drawing.Point(351, 383);
+            this.VIP_lb.Location = new System.Drawing.Point(367, 383);
             this.VIP_lb.Name = "VIP_lb";
             this.VIP_lb.Size = new System.Drawing.Size(35, 20);
             this.VIP_lb.TabIndex = 35;
@@ -294,9 +304,9 @@
             // Booked_btn
             // 
             this.Booked_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Booked_btn.Location = new System.Drawing.Point(1116, 331);
+            this.Booked_btn.Location = new System.Drawing.Point(28, 445);
             this.Booked_btn.Name = "Booked_btn";
-            this.Booked_btn.Size = new System.Drawing.Size(140, 29);
+            this.Booked_btn.Size = new System.Drawing.Size(115, 29);
             this.Booked_btn.TabIndex = 37;
             this.Booked_btn.Tag = "NoDel";
             this.Booked_btn.Text = "Booked";
@@ -306,7 +316,7 @@
             // Coming_btn
             // 
             this.Coming_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Coming_btn.Location = new System.Drawing.Point(854, 412);
+            this.Coming_btn.Location = new System.Drawing.Point(1173, 361);
             this.Coming_btn.Name = "Coming_btn";
             this.Coming_btn.Size = new System.Drawing.Size(84, 29);
             this.Coming_btn.TabIndex = 38;
@@ -319,7 +329,7 @@
             // 
             this.Comment_btn.Enabled = false;
             this.Comment_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Comment_btn.Location = new System.Drawing.Point(14, 302);
+            this.Comment_btn.Location = new System.Drawing.Point(28, 302);
             this.Comment_btn.Name = "Comment_btn";
             this.Comment_btn.Size = new System.Drawing.Size(100, 29);
             this.Comment_btn.TabIndex = 43;
@@ -338,7 +348,7 @@
             "4K",
             "2K",
             "FullHD"});
-            this.Screen_tb.Location = new System.Drawing.Point(694, 301);
+            this.Screen_tb.Location = new System.Drawing.Point(689, 362);
             this.Screen_tb.Name = "Screen_tb";
             this.Screen_tb.Size = new System.Drawing.Size(141, 28);
             this.Screen_tb.TabIndex = 44;
@@ -346,8 +356,9 @@
             // Expense_lb
             // 
             this.Expense_lb.AutoSize = true;
+            this.Expense_lb.BackColor = System.Drawing.Color.Transparent;
             this.Expense_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Expense_lb.Location = new System.Drawing.Point(342, 412);
+            this.Expense_lb.Location = new System.Drawing.Point(358, 412);
             this.Expense_lb.Name = "Expense_lb";
             this.Expense_lb.Size = new System.Drawing.Size(71, 20);
             this.Expense_lb.TabIndex = 46;
@@ -356,8 +367,9 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(261, 412);
+            this.label10.Location = new System.Drawing.Point(277, 412);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 20);
             this.label10.TabIndex = 45;
@@ -366,9 +378,9 @@
             // Commented_btn
             // 
             this.Commented_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Commented_btn.Location = new System.Drawing.Point(1116, 371);
+            this.Commented_btn.Location = new System.Drawing.Point(149, 445);
             this.Commented_btn.Name = "Commented_btn";
-            this.Commented_btn.Size = new System.Drawing.Size(140, 29);
+            this.Commented_btn.Size = new System.Drawing.Size(116, 29);
             this.Commented_btn.TabIndex = 47;
             this.Commented_btn.Tag = "NoDel";
             this.Commented_btn.Text = "Commented";
@@ -378,7 +390,7 @@
             // AllComment_btn
             // 
             this.AllComment_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllComment_btn.Location = new System.Drawing.Point(1116, 412);
+            this.AllComment_btn.Location = new System.Drawing.Point(1117, 400);
             this.AllComment_btn.Name = "AllComment_btn";
             this.AllComment_btn.Size = new System.Drawing.Size(140, 29);
             this.AllComment_btn.TabIndex = 48;
@@ -405,13 +417,13 @@
             this.ShowTime_ID_tb.Location = new System.Drawing.Point(120, 8);
             this.ShowTime_ID_tb.Name = "ShowTime_ID_tb";
             this.ShowTime_ID_tb.ReadOnly = true;
-            this.ShowTime_ID_tb.Size = new System.Drawing.Size(44, 29);
+            this.ShowTime_ID_tb.Size = new System.Drawing.Size(55, 29);
             this.ShowTime_ID_tb.TabIndex = 50;
             // 
             // Reservation_ID_tb
             // 
             this.Reservation_ID_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reservation_ID_tb.Location = new System.Drawing.Point(120, 302);
+            this.Reservation_ID_tb.Location = new System.Drawing.Point(134, 302);
             this.Reservation_ID_tb.Name = "Reservation_ID_tb";
             this.Reservation_ID_tb.ReadOnly = true;
             this.Reservation_ID_tb.Size = new System.Drawing.Size(44, 29);
@@ -421,7 +433,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 451);
+            this.ClientSize = new System.Drawing.Size(1285, 490);
             this.Controls.Add(this.Reservation_ID_tb);
             this.Controls.Add(this.ShowTime_ID_tb);
             this.Controls.Add(this.Rating_btn);

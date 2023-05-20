@@ -24,7 +24,7 @@ namespace Cinema
 
         string ShowTime_ID = "";
         string Reservation_ID = "";
-        MovieType flag = MovieType.InDay;
+        MovieType flag = MovieType.Coming;
 
         public Cinema()
         {
@@ -128,7 +128,7 @@ namespace Cinema
         private void Movies_Data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = Movies_Data.CurrentCell.RowIndex;
-            if (r == Movies_Data.RowCount - 1 || flag == MovieType.AllComments)
+            if (r == Movies_Data.RowCount - 1 || flag == MovieType.AllComments || flag == MovieType.MovieRating)
             {
                 ShowTime_ID = "";
                 ShowTime_ID_tb.Text = "";
@@ -188,26 +188,27 @@ namespace Cinema
             DialogResult dlr = MessageBox.Show($"Your total is {total_cost}", "Notification", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes)
             {
-                if (total_cost > cus.Balance && User_Booked.Count > 1)
+                if (cus.Balance < total_cost && User_Booked.Count > 1)
                 {
-                    MessageBox.Show("You don't have enough money", "Notification");
-                    return;
+                    MessageBox.Show("Your balance is not enough!!!", "Notification");
                 }
-                try
+                else
                 {
-                    bs.SumTotalCost(ShowTime_ID, ref total_cost, cus.User_ID, User_Booked.Count());
-                    foreach (var seat in User_Booked)
+                    try
                     {
-                        bs.AddReservation(cus.User_ID, ShowTime_ID, seat);
+                        foreach (var seat in User_Booked)
+                        {
+                            bs.AddReservation(cus.User_ID, ShowTime_ID, seat);
+                        }
+                        bs.UserInformation(cus.User_ID, ref cus);
+                        LoadUserInformation();
+                        MessageBox.Show("Booked Successfully", "Notification");
                     }
-                    bs.UserInformation(cus.User_ID, ref cus);
-                    LoadUserInformation();
-                    MessageBox.Show("Booked Successfully", "Notification");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Notification");
-                }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Notification");
+                    }
+                }                
             }
             User_Booked = new List<int>();
             ClearSeatButtons();
