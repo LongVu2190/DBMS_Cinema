@@ -20,11 +20,11 @@ namespace Cinema.DB_Layer
         {
             if (type == 0)
             {
-                strConnectionString = "Data Source=localhost;Initial Catalog=Cinema;Integrated Security=False;User ID=login123;Password=login";
+                strConnectionString = "Data Source=172.16.30.56;Initial Catalog=Cinema;Integrated Security=False;User ID=login123;Password=login";
             }
             else
             {
-                strConnectionString = "Data Source=localhost;Initial Catalog=Cinema;Integrated Security=False;User ID=customer123;Password=customer";
+                strConnectionString = "Data Source=172.16.30.56;Initial Catalog=Cinema;Integrated Security=False;User ID=customer123;Password=customer";
             }
             con = new SqlConnection(strConnectionString);
         }
