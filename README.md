@@ -1,1 +1,2 @@
-# DBMS_Cinema
+# Final Project
+- Subject: Database Management System
